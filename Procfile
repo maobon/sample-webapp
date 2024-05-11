@@ -1,1 +1,1 @@
-gunicorn learning_log.wsgi
+gunicorn manage:app
