@@ -114,16 +114,21 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # external networks
 
 # postgres://learning_logs_e7h2_user:JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86@dpg-covomq7jbltc73dhpf0g-a/learning_logs_e7h2
+# USER= learning_logs_e7h2_user
+# PASSWORD= JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86
+# INTERNAL_HOST= dpg-covomq7jbltc73dhpf0g-a
+# DATABASE= learning_logs_e7h2
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'HOST': 'postgres://learning_logs_e7h2_user:JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86@dpg-covomq7jbltc73dhpf0g-a/learning_logs_e7h2',
+        'HOST': 'dpg-covomq7jbltc73dhpf0g-a',
         'PORT': '5432',
-        'PASSWORD': 'JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86',
 
         'NAME': 'learning_logs_e7h2',
         'USER': 'learning_logs_e7h2_user',
+        'PASSWORD': 'JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86',
     }
 }
 
