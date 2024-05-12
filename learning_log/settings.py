@@ -78,10 +78,52 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# local sqlite
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# local PostgreSQL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',  # 数据库引擎
+#         'NAME': 'mydb',  # 数据库名，Django不会帮你创建，需要自己进入数据库创建。
+#         'USER': 'root',  # 设置的数据库用户名
+#         'PASSWORD': 'admin',  # 设置的密码
+#         'HOST': '127.0.0.1',  # 本地主机或数据库服务器的ip
+#         'PORT': '5432',  # 数据库使用的端口
+#     }
+# }
+
+# Render database test from external networks
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'learning_logs_e7h2',
+#         'USER': 'learning_logs_e7h2_user',
+#         'PASSWORD': 'JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86',
+#         'HOST': 'dpg-covomq7jbltc73dhpf0g-a.singapore-postgres.render.com',
+#         'PORT': '5432',
+#     }
+# }
+
+# Render database
+# external networks
+
+# postgres://learning_logs_e7h2_user:JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86@dpg-covomq7jbltc73dhpf0g-a/learning_logs_e7h2
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'HOST': 'postgres://learning_logs_e7h2_user:JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86@dpg-covomq7jbltc73dhpf0g-a/learning_logs_e7h2',
+        'PORT': '5432',
+        'PASSWORD': 'JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86',
+
+        'NAME': 'learning_logs_e7h2',
+        'USER': 'learning_logs_e7h2_user',
     }
 }
 
