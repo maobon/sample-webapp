@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,6 +23,7 @@ SECRET_KEY = 'django-insecure-*h^(u!=17@ve)b6ku&_k+-!qabc37**_24sj+u%q^p=gl)y0j3
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = []
 
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,12 +80,12 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 # local sqlite
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # local PostgreSQL
 # DATABASES = {
@@ -119,18 +120,18 @@ WSGI_APPLICATION = 'learning_log.wsgi.application'
 # INTERNAL_HOST= dpg-covomq7jbltc73dhpf0g-a
 # DATABASE= learning_logs_e7h2
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'HOST': 'dpg-covomq7jbltc73dhpf0g-a',
-        'PORT': '5432',
-
-        'NAME': 'learning_logs_e7h2',
-        'USER': 'learning_logs_e7h2_user',
-        'PASSWORD': 'JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#
+#         'HOST': 'dpg-covomq7jbltc73dhpf0g-a',
+#         'PORT': '5432',
+#
+#         'NAME': 'learning_logs_e7h2',
+#         'USER': 'learning_logs_e7h2_user',
+#         'PASSWORD': 'JjJpNEfoZDtGhezLdqlXqLQjIJ9CDI86',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
